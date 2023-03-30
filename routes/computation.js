@@ -4,20 +4,20 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 if(Object.keys(req.query).length == 0){
-  var k = Math.random();
+  var x = Math.random();
   res.render('computation',{
-  param1:`math.log2() applied to ${k} is ${Math.log2(k)}`,
-  param2:`math.cosh() applied to ${k} is ${Math.cosh(k)}`,
-  param3:`math.floor() applied to ${k} is ${Math.floor(k)}`
+  param1:`math.log2() applied to ${x} is ${Math.log2(x)}`,
+  param2:`math.cosh() applied to ${x} is ${Math.cosh(x)}`,
+  param3:`math.floor() applied to ${x} is ${Math.floor(x)}`
 });
 }
 
 else{
-  for(let m in req.query){
+  for(let y in req.query){
     res.render('computation',{
-    param1:`math.log2() applied to ${req.query[m]} is ${Math.log2(req.query[m])}`,
-    param2:`math.cosh() applied to ${req.query[m]} is ${Math.cosh(req.query[m])}`,
-    param3:`math.floor() applied to ${req.query[m]} is ${Math.floor(req.query[m])}`})
+    param1:`math.log2() applied to ${req.query[y]} is ${Math.log2(req.query[y])}`,
+    param2:`math.cosh() applied to ${req.query[y]} is ${Math.cosh(req.query[y])}`,
+    param3:`math.floor() applied to ${req.query[y]} is ${Math.floor(req.query[y])}`})
   }
 
 }
